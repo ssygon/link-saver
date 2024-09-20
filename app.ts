@@ -126,6 +126,7 @@ class LinksManager {
       return button;
     };
 
+    // TODO: Fix this
     // Previous button
     paginationElement.appendChild(createPageButton( (this.currentPage - 1) <= 0 ? 1 : this.currentPage - 1, '<'));
 
@@ -142,6 +143,7 @@ class LinksManager {
       }
     }
 
+    // TODO: Fix this
     // Next button
     paginationElement.appendChild(createPageButton( (this.currentPage + 1) >= totalPages ? totalPages : this.currentPage + 1, '>'));
   }
@@ -302,8 +304,10 @@ class LinksManager {
     }
   }
 
+  // TODO: Implement this via CORS middleware
   // Check if a URL exists
   private checkIsExists(url: string, callback: (exists: boolean) => void): void {
+    return callback(true);
     console.log('Trying to fetch url: ' + url);
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {

@@ -94,6 +94,7 @@ var LinksManager = /** @class */ (function () {
             button.addEventListener('click', function () { return _this.goToPage(page, totalPages); });
             return button;
         };
+        // TODO: Fix this
         // Previous button
         paginationElement.appendChild(createPageButton((this.currentPage - 1) <= 0 ? 1 : this.currentPage - 1, '<'));
         // Page numbers
@@ -107,6 +108,7 @@ var LinksManager = /** @class */ (function () {
                 paginationElement.appendChild(document.createTextNode('...'));
             }
         }
+        // TODO: Fix this
         // Next button
         paginationElement.appendChild(createPageButton((this.currentPage + 1) >= totalPages ? totalPages : this.currentPage + 1, '>'));
     };
@@ -255,8 +257,10 @@ var LinksManager = /** @class */ (function () {
             this.closeDeleteDialog();
         }
     };
+    // TODO: Implement this via CORS middleware
     // Check if a URL exists
     LinksManager.prototype.checkIsExists = function (url, callback) {
+        return callback(true);
         console.log('Trying to fetch url: ' + url);
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
