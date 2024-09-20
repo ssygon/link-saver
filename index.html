@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Javascript/Typescript SPA web app showing a list of URL links</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrapper">
+    <div id="form-page" class="page">
+      <h1>Overview Page</h1>
+      <section>
+        <form id="urlLinksForm">
+          <p>
+            Please enter a valid existing URL<br/>
+            (e.g. https://www.google.com)
+          </p>
+          <p>
+            <input type="text" id="url" name="url" placeholder="Type URL here" required/>
+            <span id="message" class="message"></span>
+          </p>
+          <p>
+            <button role="Add link" type="submit">Add</button>
+          </p>
+        </form>
+        <ol aria-label="List of links" id="linksList" class="list-of-links">
+          <!-- Links will be dynamically inserted here -->
+        </ol>
+        <div id="pagination">
+          <!-- Pagination will be dynamically inserted here -->
+        </div>
+        <p>
+          <button id="showResultsButton" role="Show results" class="cta">Show Results</button>
+        </p>
+      </section>
+    </div>
+
+    <div id="results-page" class="page hidden">
+      <h1>Results Page</h1>
+      <p>List of submitted links:</p>
+      <ol aria-label="List of links" id="submittedUrlLinksList" class="list-of-links">
+        <!-- Links will be dynamically inserted here -->
+      </ol>
+      <button id="backToOverview" class="cta">Back to Overview</button>
+    </div>
+  </main>
+
+  <dialog id="editLinkDialog">
+    <form id="editLinkForm">
+      <input type="text" id="editLinkUrl" name="editLinkUrl" placeholder="Type URL here" required>
+      <span id="editMessage" class="message"></span>
+      <div class="buttons-wrapper">
+        <button role="Save link" type="submit">Save</button>
+        <button role="Close dialog" type="button" id="cancelEditLink" class="cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="deleteLinkDialog">
+    <p>Are you sure you want to delete this link?</p>
+    <div class="buttons-wrapper">
+      <button role="Delete link" type="button" id="confirmDeleteLink">Delete</button>
+      <button role="Close dialog" type="button" id="cancelDeleteLink" class="cancel">Cancel</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
