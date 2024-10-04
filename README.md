@@ -26,11 +26,6 @@ run `http-server` to serve the `index.html` file.
 
 To view the web app, open `http://localhost:8080` in your Chrome browser.
 
-To bypass the browser's same-origin policy, download Chrome's extension CORS here: [CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
-
-Follow the CORS settings here:  
-<INSERT_SCREENSHOT_HERE>
-
 
 
 
